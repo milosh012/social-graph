@@ -18,5 +18,10 @@ class User extends Eloquent {
    */
 	public static $gender = array('male', 'female');
 
+  public function friends()
+  {
+    return $this->belongsToMany('User', 'friends', 'initiator_user_id', 'friend_user_id');
+  }
+
 
 }
