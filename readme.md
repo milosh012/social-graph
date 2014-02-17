@@ -1,21 +1,17 @@
-## Laravel PHP Framework
+## Social Graph
 
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework) [![License](https://poser.pugx.org/laravel/framework/license.png)](https://packagist.org/packages/laravel/framework) 
+The purpose of this task is to create a method of examining a social network. You are given data (data.json) representing a group of people, in the form of a social graph. Each person listed has one or more connections within the group.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+Come up with a data structure to store and query the information found in the JSON file.
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+You should then create a public API in the language of your choice which allows for three basic operations to be executed for a certain person:
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+- Direct friends: Return those people who are directly connected to the chosen person.
+- Friends of friends: Return those who are two steps away, but not directly connected to the chosen person.
+- Suggested friends: Return people in the group who know 2 or more direct friends of the chosen person, but are not directly connected to her.
 
-## Official Documentation
+Your API can be exposed as public functions, a REST-endpoint, a command line interface, whatever fits the choice of your technology stack best.
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+### Requirements
 
-### Contributing To Laravel
-
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+### Installation
