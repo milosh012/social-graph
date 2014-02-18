@@ -65,6 +65,7 @@ class EloquentFriendRepository implements FriendRepositoryInterface {
     return User::join('friendships', 'friendships.second_user_id', '=', 'users.id')
               ->whereIn('first_user_id', $friendIds)
               ->whereNotIn('second_user_id', $friendIds)
+              ->groupBy('users.id')
               ->orderBy('users.id');
   }
 
