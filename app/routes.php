@@ -12,6 +12,7 @@
 */
 
 App::bind('Repositories\FriendRepositoryInterface', 'Repositories\EloquentFriendRepository');
+App::bind('Repositories\UserRepositoryInterface', 'Repositories\EloquentUserRepository');
 
 Route::get('/', function()
 {

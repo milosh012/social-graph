@@ -1,7 +1,20 @@
 <?php
 
+use Repositories\UserRepositoryInterface;
 
 class UsersController extends \BaseController {
+
+  /**
+   * Users repository
+   *
+   * @var UserRepositoryInterface
+   */
+  protected $usersRepository;
+
+  public function __construct(UserRepositoryInterface $usersRepository)
+  {
+    $this->usersRepository = $usersRepository;
+  }
 
 	/**
 	 * Return all users
@@ -10,7 +23,7 @@ class UsersController extends \BaseController {
 	 */
 	public function index()
 	{
-		return User::all();
+		return $this->usersRepository->getAllUsers();
 	}
 
 }

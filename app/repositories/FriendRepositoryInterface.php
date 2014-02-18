@@ -8,6 +8,6 @@ interface FriendRepositoryInterface {
 
   public function getUserFriendsOfFriends($userId);
 
-  public function getUserSuggestedFriends($userId, $directedFriendsCount);
+  public function getUserSuggestedFriends($userId, $directedFriendsCount = 2);
 
 }
