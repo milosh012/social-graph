@@ -1,0 +1,13 @@
+{
+  "name": "Social Graph",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular": "v1.2.11",
+    "angular-ui-router": "0.2.8-bowratic-tedium",
+    "angular-animate": "v1.2.11",
+    "jquery": "v2.1.0",
+    "restangular": "v1.3.1",
+    "angular-loading-bar": "v0.3.0",
+    "lodash": "v2.4.1"
+  }
+}
