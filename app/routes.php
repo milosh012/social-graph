@@ -11,7 +11,21 @@
 |
 */
 
+App::bind('Repositories\FriendRepositoryInterface', 'Repositories\EloquentFriendRepository');
+
 Route::get('/', function()
 {
-	return View::make('hello');
+  return View::make('index');
 });
+
+// Return those people who are directly connected to the chosen person.
+Route::get('/users/{id}/friends', 'FriendsController@getUserFriends');
+
+// Return those who are two steps away, but not directly connected to the chosen person.
+Route::get('/users/{id}/friends-of-friends', 'FriendsController@getUserFriendsOfFriends');
+
+// Return people in the group who know 2 or more direct friends of the chosen person,
+// but are not directly connected to her.
+Route::get('/users/{id}/suggested-friends', 'FriendsController@getUserSuggestedFriends');
+
+Route::get('/users', 'UsersController@index');

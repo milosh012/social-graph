@@ -21,6 +21,8 @@ whatever fits the choice of your technology stack best.
 - PHP >= 5.3.7
 - MCrypt PHP Extension
 - MySQL
+- Composer globally installed
+- Bower globally installed
 
 #### Dev Requirements
 
@@ -29,11 +31,19 @@ whatever fits the choice of your technology stack best.
 ### Installation
 
 1. Clone repo with ```git clone git@github.com:milosh012/social-graph.git```
-2. Create DB in MySQL with name "socialgraph"
-3. Setup mysql configuration ```app/config/database.php``` (host, username, password, db... 57 - 60 lines)
-4. Run migrations ```php artisan migrate```
-5. Seed DB with fixtures ```php artisan db:seed```
+2. Install PHP deps with (from the root of the project) ```composer install```
+3. Install JS deps with ```bower install```
+4. Create DB in MySQL with name "socialgraph"
+5. Setup mysql configuration ```app/config/database.php``` (host, username, password, db... 57 - 60 lines)
+6. Run migrations ```php artisan migrate```
+7. Seed DB with fixtures ```php artisan db:seed```
 
-### Running app
+### Running application
 
-From the root of the project run small server ```php artisan serve``` and go to [http://localhost:8000](http://localhost:8000)
+Open console and from the root of the project run small server with
+```php artisan serve``` and go to [http://localhost:8000](http://localhost:8000)
+
+### Running tests
+
+To run tests you will need to have PHPUnit installed.
+Navigate to the root of the project and then run ```phpunit```
