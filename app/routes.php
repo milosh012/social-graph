@@ -11,9 +11,11 @@
 |
 */
 
+// Binding interfaces for the ioc container
 App::bind('Repositories\FriendRepositoryInterface', 'Repositories\EloquentFriendRepository');
 App::bind('Repositories\UserRepositoryInterface', 'Repositories\EloquentUserRepository');
 
+// home page
 Route::get('/', function()
 {
   return View::make('index');
@@ -29,4 +31,5 @@ Route::get('/users/{id}/friends-of-friends', 'FriendsController@getUserFriendsOf
 // but are not directly connected to her.
 Route::get('/users/{id}/suggested-friends', 'FriendsController@getUserSuggestedFriends');
 
+// Return all users in the system
 Route::get('/users', 'UsersController@index');

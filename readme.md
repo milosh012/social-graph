@@ -34,7 +34,7 @@ whatever fits the choice of your technology stack best.
 2. Install PHP deps with (from the root of the project) ```composer install```
 3. Install JS deps with ```bower install```
 4. Create DB in MySQL with name "socialgraph"
-5. Setup mysql configuration ```app/config/database.php``` (host, username, password, db... 57 - 60 lines)
+5. Setup mysql configuration in ```app/config/database.php``` (host, username, password, db... 57 - 60 lines)
 6. Run migrations ```php artisan migrate```
 7. Seed DB with fixtures ```php artisan db:seed```
 
