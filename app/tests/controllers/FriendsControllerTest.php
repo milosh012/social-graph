@@ -2,6 +2,11 @@
 
 use \Mockery;
 
+/**
+ * Integration test for friends controller
+ *
+ * @group integration
+ */
 class FriendsControllerTest extends TestCase {
 
 	private $responseArray = array(

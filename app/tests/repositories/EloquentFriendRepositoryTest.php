@@ -2,6 +2,11 @@
 
 use Repositories\EloquentFriendRepository;
 
+/**
+ * Test for EloquentFriendRepository
+ *
+ * @group unit
+ */
 class EloquentFriendRepositoryTest extends TestCase {
 
 	private $repo;

@@ -45,5 +45,13 @@ Open console and from the root of the project run small server with
 
 ### Running tests
 
-To run tests you will need to have PHPUnit installed.
+To run all tests you will need to have PHPUnit installed.
 Navigate to the root of the project and then run ```phpunit```
+
+#### Unit tests
+
+To run only unit tests you need to specify group: ```phpunit --group=unit```
+
+#### Integration tests
+
+To run only integration tests you need to specify group: ```phpunit --group=integration```

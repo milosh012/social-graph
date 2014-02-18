@@ -2,6 +2,11 @@
 
 use \Mockery;
 
+/**
+ * Integration test for users controller
+ *
+ * @group integration
+ */
 class UsersControllerTest extends TestCase {
 
 	public function setUp()
