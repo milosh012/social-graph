@@ -8,15 +8,34 @@ class EloquentFriendRepositoryTest extends TestCase {
 	{
 		$repo = new EloquentFriendRepository();
 
-		$this->assertEquals(1, $repo->getUserFriends(1)->count());
-		$this->assertEquals(2, $repo->getUserFriends(2)->count());
-		$this->assertEquals(4, $repo->getUserFriends(3)->count());
-		$this->assertEquals(1, $repo->getUserFriends(4)->count());
-		$this->assertEquals(5, $repo->getUserFriends(5)->count());
-		$this->assertEquals(1, $repo->getUserFriends(6)->count());
-		$this->assertEquals(5, $repo->getUserFriends(7)->count());
-		$this->assertEquals(1, $repo->getUserFriends(8)->count());
-		$this->assertEquals(1, $repo->getUserFriends(9)->count());
+		$this->assertEquals(1, count($repo->getUserFriends(1)));
+		$this->assertEquals(2, count($repo->getUserFriends(2)));
+		$this->assertEquals(4, count($repo->getUserFriends(3)));
+		$this->assertEquals(1, count($repo->getUserFriends(4)));
+		$this->assertEquals(5, count($repo->getUserFriends(5)));
+		$this->assertEquals(1, count($repo->getUserFriends(6)));
+		$this->assertEquals(5, count($repo->getUserFriends(7)));
+		$this->assertEquals(1, count($repo->getUserFriends(8)));
+		$this->assertEquals(1, count($repo->getUserFriends(9)));
+	}
+
+	public function testGetUserFriendsOfFriends()
+	{
+		$repo = new EloquentFriendRepository();
+
+		$this->assertEquals(1, count($repo->getUserFriendsOfFriends(1)));
+		$this->assertEquals(3, count($repo->getUserFriendsOfFriends(2)));
+		$this->assertEquals(7, count($repo->getUserFriendsOfFriends(3)));
+		$this->assertEquals(3, count($repo->getUserFriendsOfFriends(4)));
+	}
+
+	public function testGetUserSuggestedFriends()
+	{
+		$repo = new EloquentFriendRepository();
+
+		$this->assertEquals(1, count($repo->getUserSuggestedFriends(16)));
+		$this->assertEquals(0, count($repo->getUserSuggestedFriends(1)));
+
 	}
 
 }
