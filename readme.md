@@ -18,7 +18,7 @@ whatever fits the choice of your technology stack best.
 
 ### Requirements
 
-- PHP >= 5.3.7
+- PHP >= 5.4
 - MCrypt PHP Extension
 - MySQL
 - Composer globally installed

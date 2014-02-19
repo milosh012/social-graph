@@ -7,9 +7,10 @@
     <title>Social Graph</title>
 
     <!-- Bootstrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/jumbotron-narrow.css" rel="stylesheet">
-    <link href="/bower_components/angular-loading-bar/build/loading-bar.min.css" rel="stylesheet">
+
+    <?php echo HTML::style('css/bootstrap.min.css'); ?>
+    <?php echo HTML::style('css/jumbotron-narrow.css'); ?>
+    <?php echo HTML::style('bower_components/angular-loading-bar/build/loading-bar.min.css'); ?>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,14 +42,14 @@
       </div>
     </div> <!-- /container -->
 
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/angular/angular.min.js"></script>
-    <script src="/bower_components/angular-animate/angular-animate.min.js"></script>
-    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="/bower_components/lodash/dist/lodash.min.js"></script>
-    <script src="/bower_components/restangular/dist/restangular.min.js"></script>
-    <script src="/bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
-    <script src="/js/app.js"></script>
+    <?php echo HTML::script('bower_components/jquery/dist/jquery.min.js'); ?>
+    <?php echo HTML::script('bower_components/angular/angular.min.js'); ?>
+    <?php echo HTML::script('bower_components/angular-animate/angular-animate.min.js'); ?>
+    <?php echo HTML::script('bower_components/angular-ui-router/release/angular-ui-router.min.js'); ?>
+    <?php echo HTML::script('bower_components/lodash/dist/lodash.min.js'); ?>
+    <?php echo HTML::script('bower_components/restangular/dist/restangular.min.js'); ?>
+    <?php echo HTML::script('bower_components/angular-loading-bar/build/loading-bar.min.js'); ?>
+    <?php echo HTML::script('js/app.js'); ?>
 
   </body>
 </html>
