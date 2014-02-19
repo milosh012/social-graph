@@ -1,4 +1,4 @@
-## Social Graph
+# Social Graph
 
 The purpose of this task is to create a method of examining a social network.
 You are given data (data.json) representing a group of people, in the form of a social graph.
@@ -16,7 +16,19 @@ three basic operations to be executed for a certain person:
 Your API can be exposed as public functions, a REST-endpoint, a command line interface,
 whatever fits the choice of your technology stack best.
 
-### Requirements
+## Table of contents
+
+- [Requirements](#requirements)
+    - [Dev Requirements](#dev-requirements)
+- [Installation](#installation)
+- [Running application](#running-application)
+- [Insepecting API from console](#insepecting-api-from-console)
+- [Running tests](#running-tests)
+    - [Unit tests](#unit-tests)
+    - [Integration tests](#integration-tests)
+- [Additional notes](#additional-notes)
+
+## Requirements
 
 - PHP >= 5.4
 - MCrypt PHP Extension
@@ -24,11 +36,11 @@ whatever fits the choice of your technology stack best.
 - Composer globally installed
 - Bower globally installed
 
-#### Dev Requirements
+### Dev Requirements
 
 - PHPUnit
 
-### Installation
+## Installation
 
 1. Clone repo with ```git clone git@github.com:milosh012/social-graph.git```
 2. Install PHP deps with (from the root of the project) ```composer install```
@@ -38,12 +50,12 @@ whatever fits the choice of your technology stack best.
 6. Run migrations ```php artisan migrate```
 7. Seed DB with fixtures ```php artisan db:seed```
 
-### Running application
+## Running application
 
 Open console and from the root of the project run small server with
 ```php artisan serve``` and go to [http://localhost:8000](http://localhost:8000)
 
-### Insepecting API from console
+## Insepecting API from console
 
 After running application server, you can send API requests with CURL:
 
@@ -71,20 +83,20 @@ curl 'http://localhost:8000/users/1/friends-of-friends' -H 'Pragma: no-cache' -H
 curl 'http://localhost:8000/users/16/suggested-friends' -H 'Pragma: no-cache' -H 'Accept: application/json, text/plain, */*'
 ```
 
-### Running tests
+## Running tests
 
 To run all tests you will need to have PHPUnit installed.
 Navigate to the root of the project and then run ```phpunit```
 
-#### Unit tests
+### Unit tests
 
 To run only unit tests you need to specify group: ```phpunit --group=unit```
 
-#### Integration tests
+### Integration tests
 
 To run only integration tests you need to specify group: ```phpunit --group=integration```
 
-### Additional notes
+## Additional notes
 
 This is just a development setup and environment. If we want to deploy this on production then we must do some additional steps:
 
