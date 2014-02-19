@@ -43,6 +43,34 @@ whatever fits the choice of your technology stack best.
 Open console and from the root of the project run small server with
 ```php artisan serve``` and go to [http://localhost:8000](http://localhost:8000)
 
+### Insepecting API from console
+
+After running application server, you can send API requests with CURL:
+
+- Get all users (GET: /users)
+
+```
+curl 'http://localhost:8000/users' -H 'Pragma: no-cache' -H 'Accept: application/json, text/plain, */*'
+```
+
+- Get user friends (GET /users/{id}/friends)
+
+```
+curl 'http://localhost:8000/users/1/friends' -H 'Pragma: no-cache' -H 'Accept: application/json, text/plain, */*'
+```
+
+- Get user friends of friends (GET /users/{id}/friends-of-friends)
+
+```
+curl 'http://localhost:8000/users/1/friends-of-friends' -H 'Pragma: no-cache' -H 'Accept: application/json, text/plain, */*'
+```
+
+- Get suggested friends (GET /users/{id}/suggested-friends)
+
+```
+curl 'http://localhost:8000/users/16/suggested-friends' -H 'Pragma: no-cache' -H 'Accept: application/json, text/plain, */*'
+```
+
 ### Running tests
 
 To run all tests you will need to have PHPUnit installed.
