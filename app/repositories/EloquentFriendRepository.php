@@ -43,7 +43,7 @@ class EloquentFriendRepository implements FriendRepositoryInterface {
   public function getUserSuggestedFriends($userId, $directedFriendsCount = 2)
   {
     return $this->getUserFriendsOfFriendsQuery($userId)
-                ->groupBy('friendships.second_user_id')
+                ->groupBy('friendships.friend_id')
                 ->having(DB::raw('COUNT(*)'), '>=', $directedFriendsCount)
                 ->get();
   }
@@ -62,9 +62,9 @@ class EloquentFriendRepository implements FriendRepositoryInterface {
     $friendIds[] = $userId;
 
     // get user friend of friends (that are not user friends)
-    return User::join('friendships', 'friendships.second_user_id', '=', 'users.id')
-              ->whereIn('first_user_id', $friendIds)
-              ->whereNotIn('second_user_id', $friendIds)
+    return User::join('friendships', 'friendships.friend_id', '=', 'users.id')
+              ->whereIn('user_id', $friendIds)
+              ->whereNotIn('friend_id', $friendIds)
               ->groupBy('users.id')
               ->orderBy('users.id');
   }
@@ -78,7 +78,7 @@ class EloquentFriendRepository implements FriendRepositoryInterface {
    */
   private function getUserFriendsIds($userId)
   {
-    return Friendship::where('first_user_id', $userId)->lists('second_user_id');
+    return Friendship::where('user_id', $userId)->lists('friend_id');
   }
 
 }

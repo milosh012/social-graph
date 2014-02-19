@@ -11,13 +11,13 @@ class FriendsTableSeeder extends Seeder {
 
     foreach ($data as $value) {
       $friendConnection = array(
-        'first_user_id' => $value['id'],
+        'user_id' => $value['id'],
         'created_at' => new DateTime(),
         'updated_at' => new DateTime()
       );
 
       foreach ($value['friends'] as $id) {
-        $friendConnection['second_user_id'] = $id;
+        $friendConnection['friend_id'] = $id;
         $insertData[] = $friendConnection;
       }
     }

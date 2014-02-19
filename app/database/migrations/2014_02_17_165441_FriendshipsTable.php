@@ -14,11 +14,11 @@ class FriendshipsTable extends Migration {
 	{
 		Schema::create('friendships', function($table)
 		{
-			$table->integer('first_user_id')
-						->foreign('first_user_id')->references('id')->on('users');
-			$table->integer('second_user_id')
-						->foreign('second_user_id')->references('id')->on('users');
-			$table->primary(array('first_user_id', 'second_user_id'));
+			$table->integer('user_id')
+						->foreign('user_id')->references('id')->on('users');
+			$table->integer('friend_id')
+						->foreign('friend_id')->references('id')->on('users');
+			$table->primary(array('user_id', 'friend_id'));
 			$table->timestamps();
 		});
 	}

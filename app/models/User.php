@@ -20,7 +20,7 @@ class User extends Eloquent {
 
   public function friends()
   {
-    return $this->belongsToMany('User', 'friendships', 'first_user_id', 'second_user_id');
+    return $this->belongsToMany('User', 'friendships', 'user_id', 'friend_id');
   }
 
 
