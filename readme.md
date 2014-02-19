@@ -83,3 +83,33 @@ To run only unit tests you need to specify group: ```phpunit --group=unit```
 #### Integration tests
 
 To run only integration tests you need to specify group: ```phpunit --group=integration```
+
+### Additional notes
+
+This is just a development setup and environment. If we want to deploy this on production then we must do some additional steps:
+
+1. Combine and minimize all CSS files
+2. Combine and minimize all JS files (maybe we can have 2 files - one for external libs and one for application itself)
+3. Put revision number into CSS and JS files names to prevent browser caching on new deploy
+
+For all above tasks I usually use [Gulp](http://gulpjs.com/) tool.
+
+Also, I think that the best type of DB for this kind of application is **Graph DB** (for example [Neo4j](http://www.neo4j.org/)).
+I didn't implemented here Neo4j because I never used this in real life (just reading about it).
+
+But with a current project structure it is very easy to change Repository provider to use Neo4j.
+In ```app/routes.php``` file we need to change just 2 lines
+
+```
+App::bind('Repositories\FriendRepositoryInterface', 'Repositories\EloquentFriendRepository');
+App::bind('Repositories\UserRepositoryInterface', 'Repositories\EloquentUserRepository');
+```
+
+to become
+
+```
+App::bind('Repositories\FriendRepositoryInterface', 'Repositories\Neo4jFriendRepository');
+App::bind('Repositories\UserRepositoryInterface', 'Repositories\Neo4jUserRepository');
+```
+
+And of course to create that 2 classes and write unit tests for them.
